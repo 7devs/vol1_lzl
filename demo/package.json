@@ -1,0 +1,19 @@
+{
+  "name": "lzl",
+  "version": "1.0.0",
+  "description": "7dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "7dev",
+    "demo"
+  ],
+  "author": "lizunlong",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
