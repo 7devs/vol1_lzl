@@ -15,7 +15,6 @@ r.route('/:id')
     } else {
       res.status(404).send('数据不存在');
     }
-    next();
   })
   .delete(function (req, res, next) {
     var id = req.params.id - 1;
@@ -26,7 +25,6 @@ r.route('/:id')
     } else {
       res.status(404).send('数据不存在');
     }
-    next();
   });
 
 module.exports = r;
