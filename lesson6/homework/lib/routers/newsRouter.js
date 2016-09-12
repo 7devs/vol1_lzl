@@ -21,7 +21,9 @@ r.route('/:id')
     var news = newsModal[id];
     if (news) {
       newsModal.splice(id, 1);
-      res.status(200).send(newsModal);
+      // res.status(200).send(newsModal);
+      console.log(newsModal);
+      res.status(200).end();
     } else {
       res.status(404).send('数据不存在');
     }
