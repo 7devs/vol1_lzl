@@ -9,7 +9,6 @@ app.use(bodyParser.urlencoded({
 
 // 将要处理的逻辑交给具体的包来执行
 app.use('/', require('./lib/routers/newsRouter'));
-app.use('/news', require('./lib/routers/newsRouter'));
 
 app.use('/*', function(req, res, next) {
     res.status(404).send('Not Found.');

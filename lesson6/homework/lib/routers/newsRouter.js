@@ -8,7 +8,7 @@ r.route('/')
 
 r.route('/:id')
   .get(function(req, res, next) {
-    var id = req.params.id;
+    var id = req.params.id - 1;
     var news = newsModal[id];
     if (news) {
       res.status(200).send(news);
@@ -18,10 +18,10 @@ r.route('/:id')
     next();
   })
   .delete(function (req, res, next) {
-    var id = req.params.id;
+    var id = req.params.id - 1;
     var news = newsModal[id];
     if (news) {
-      delete newsModal[id];
+      newsModal.splice(id, 1);
       res.status(200).send(newsModal);
     } else {
       res.status(404).send('数据不存在');
