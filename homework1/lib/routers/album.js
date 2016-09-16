@@ -57,8 +57,8 @@ r.route('/:id')
     var id = req.params.id - 1;
     var album = albums[id];
     if (album) {
-      var length = parseInt(req.query.length);
-      var title = req.query.title;
+      var length = parseInt(req.body.length);
+      var title = req.body.title;
       if (length && title) {
         album.length = length;
         album.title = title;

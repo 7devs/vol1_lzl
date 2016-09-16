@@ -49,12 +49,12 @@ r.route('/:id')
     var id = req.params.id - 1;
     var user = users[id];
     if (user) {
-      var age = parseInt(req.query.age);
-      if (age) {
-        user.age = req.query.age;
+      var age = parseInt(req.body.age); // 坑2：PUT 命令里的参数在 body 里面
+      if (age && age > 0) {
+        user.age = age;
         res.status(200).send(user);
       } else {
-        console.log('ERROR: Age need to be a number');
+        console.log('ERROR: Age need to be a positive number.');
         res.status(200).end();
       }
     } else {
